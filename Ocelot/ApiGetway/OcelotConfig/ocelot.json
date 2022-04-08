@@ -1,0 +1,43 @@
+{
+  "Routes": [
+    {
+      "DownstreamPathTemplate":"/Customer",
+      "DownstreamScheme":"https",
+      "DownstreamHostAndPorts":[
+        {
+          "Host":"localhost",
+          "Port": "7092"
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "UpstreamPathTemplate":"/apigateway/Customer",
+      "UpstreamHttpMethod":[
+        "GET"
+      ]
+    },
+    {
+      "DownstreamPathTemplate":"/Product",
+      "DownstreamScheme":"https",
+      "DownstreamHostAndPorts":[
+        {
+          "Host":"localhost",
+          "Port": "7140"
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "UpstreamPathTemplate":"/apigateway/Product",
+      "UpstreamHttpMethod":[
+        "GET"
+      ]
+    }
+  ],
+  "GlobalConfiguration": {
+    "BaseUrl":  "https://localhost:7086"
+  }
+}
